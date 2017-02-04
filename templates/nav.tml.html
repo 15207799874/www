@@ -1,0 +1,53 @@
+
+<div class="bar bar-header bar-light" ng-hide='hold'> 
+  <h1 class="title item-icon-left item-icon-right">
+	<a class="icon ion-plus-round" ng-click=newMessage()></a>
+		便签
+	<a class="icon ion-android-apps" ></a>
+  </h1>
+</div>  
+<div class="bar bar-header" ng-show='hold'>
+  <button class="button button-positive" ng-click=cancelClick()>取消</button>
+  <h1 class="title">已选择{{ckCount}}项</h1>
+  <button class="button button-positive" ng-click=selectToggle()>{{selectButtonHtml}}</button>
+</div>  
+
+<!-- 底部 -->
+<div class="bar bar-footer button-stable" ng-show='hold'> 
+	<div class="button-bar bar-dark">  
+		<button class="button button-outline icon-right ion-arrow-up-b button-positive" ng-click=beTop() ng-disabled='selectTop || !hasSelect'>置顶</button>
+		<button class="button button-outline icon-right ion-arrow-down-b button-positive" ng-click=cancelTop() ng-disabled='!selectTop || !hasSelect'>取消置顶</button>		
+		<button class="button button-outline icon-right ion-trash-a button-positive" ng-click=remove()>删除</button>
+		<button class="button button-outline icon-right ion-ios-compose button-positive" ng-click=save()>保存</button>
+	</div>
+</div>  
+<!-- 内容 -->
+<div class="content has-header">
+      <div class="list ">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Search" ng-model='search'>
+        </label>
+		<li class="item item-avatar"  ng-repeat='item in items | filter:search track by $index' on-hold=onhold() li-Click>
+		    <label class="checkbox" ng-show='hold' style='float:right'>
+				<input type="checkbox" name='ckMessage' ck-Click>
+            </label>			
+			<span>
+				<p>{{item.txt}}</p>
+				<h6 class='calm'><span class='energized' ng-show='item.beTop'>置顶</span>{{item.localTime}}</h6>					
+			</span>            			
+        </li>
+      </div>
+</div>
+
+
+
+
+
+<!--       <ion-view view-title="Home">
+        <ion-content class="padding">
+          <p>
+            <a class="button icon icon-right ion-chevron-right" href="#/tab/facts">Scientific Facts</a>
+          </p>
+        </ion-content>
+      </ion-view> -->

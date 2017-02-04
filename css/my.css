@@ -1,0 +1,48 @@
+.item-radio input:checked~.radio-icon {
+    visibility: visible;
+}
+.b-transparent {
+    background:transparent;!important
+    
+}
+.b-paper{
+    background-image: url(../img/paper.gif);
+    
+}
+
+.b-desert{
+    background-image: url(../img/bgdesert.gif);
+    
+}
+.b-metal{
+    background-image: url(../img/metal.gif);
+}
+/*.my-horizontal{
+    width: 100%;
+    height: 100px;
+}
+.my-horizontal >li{
+    display: inline-block;
+    list-style-type: none;
+    width: 
+    border: red solid 1px;
+}*/
+
+/*.container{    
+    border: green solid 1px;
+    
+}*/
+.container li{
+    float: left;
+    list-style-type: none;     
+    text-align: center;
+}
+.block{
+    display: block;
+}
+.image{
+    width:95px;
+    height:95px;
+    margin-left: 10px;
+    border: green solid 1px;
+}

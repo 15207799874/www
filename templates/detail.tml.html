@@ -1,0 +1,23 @@
+
+<div ng-class="item.bClass">
+	<div class="bar bar-header b-transparent"> 
+		<h1 class="title item-icon-left item-icon-right"><a class="icon ion-arrow-left-a" ng-click=goBack()></a>{{now}}<a class="button button-icon icon ion-android-more-vertical" ng-click=toggleUpPane()></a></h1>
+	</div>    
+	<div class="content has-header b-transparent" style='height:100%'>  
+		<textarea msd-elastic class="b-transparent" ng-class="item.class" style='resize:none;width:90%;margin:auto;padding:20px 0px' ng-model='item.txt' my-Width></textarea>
+	</div>
+
+
+	<div class="bar bar-footer button-stable b-transparent"> 	 
+		<a class="button button-icon icon ion-trash-a" ng-click=confirmDel() style='width:25%'></a>
+		<a class="button button-icon icon ion-arrow-up-b" ng-click=select() style='width:25%' disabled></a>
+		<a class="button button-icon icon ion-checkmark-circled" ng-click=cancelTop() style='width:25%' disabled></a>	
+		<a class="button button-icon icon ion-settings" ng-click="openPopover($event)" style='width:25%'></a>
+	</div>  
+	<div tran-sparent ng-show="showPane"></div>
+	<div up-Down-Pane ng-show="showPane"></div>
+	<div></div>
+</div>
+ 
+
+ 
